@@ -129,14 +129,23 @@ entry_correo.config(bg="white", fg="orange2", font=("Times New Roman", 18), widt
 entry_correo.focus_set()
 entry_correo.place(x=300, y=270)
 
+# boton calcular 
+bt_convertir = Button(frame_blanco,text="Calcular ", command=abrir_toplevel_notas)
+bt_convertir.place(x=230, y=360, width=100, height=30)
+
 # abrir toplevel notas
 def abrir_toplevel_notas():
-    global toplevel_notas
-    toplevel_notas = Toplevel()
-    toplevel_notas.title("David Fernando Rangel Fonseca")
-    toplevel_notas.resizable(False, False)
-    toplevel_notas.geometry("600x400")
-    toplevel_notas.config(bg="white")
+    global toplevel_calcular
+    toplevel_calcular = Toplevel()
+    toplevel_calcular.title("David Fernando Rangel Fonseca")
+    toplevel_calcular.resizable(False, False)
+    toplevel_calcular.geometry("600x400")
+    toplevel_calcular.config(bg="white")
+
+    # etiqueta para el texto
+    lb_texto = Label(toplevel_calcular, text = "Chismoso")
+    lb_texto.config(bg="white", fg="orange2", font=("Helvetica", 18))
+    lb_texto.place(x=10, y=10)
 
 # run
 # se ejecuta el metodo mainlop() de la clase Tk () a través de la instancia ventana_principal. Este metodo despliega una ventana en la pantalla y queda a la espera de lo que el usuario haga (click en un botón, escrubir, etc). Cada acción del usuario se conoce como un evento. El método mainloop() es un bucle infinito.
